@@ -1,0 +1,1 @@
+/home/romero/.config/i3
