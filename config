@@ -126,6 +126,12 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xset s off
 exec --no-startup-id xset s noblank
 
+######################################
+# Para evitar que componentes de GNOME se crasheen
+# agregue gtk-enable-animations=false en los siguientes archivos:
+# ~/.config/gtk-3.0/settings.ini y ~/.config/gtk-4.0/settings.ini
+######################################
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
