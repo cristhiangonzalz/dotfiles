@@ -103,7 +103,10 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
-bindsym $mod+g floating toggle
+#bindsym $mod+g floating toggle
+bindsym $mod+g floating toggle, resize set 70 ppt 70 ppt, move position center
+
+for_window [class="Alacritty" floating] resize set 50 ppt 50 ppt, move position center
 
 
 # change focus between tiling / floating windows
@@ -200,6 +203,10 @@ default_border pixel 0
 for_window [class=".*"] title_format ""
 for_window [class=".*"] border normal
 for_window [class=".*"] border pixel 1
+
+# Ejemplo: Solo para la terminal Alacritty
+#for_window [class="Brave-browser"] floating enable, resize set 70 ppt 90 ppt, move position center
+
 
 gaps outer 0
 gaps inner 4
