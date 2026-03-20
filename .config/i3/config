@@ -74,6 +74,7 @@ bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
+bindsym Mod1+Tab focus next
 
 # move focused window
 bindsym $mod+Shift+j move left
@@ -104,9 +105,11 @@ bindsym $mod+e layout toggle split
 # toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
 #bindsym $mod+g floating toggle
-bindsym $mod+g floating toggle, resize set 70 ppt 70 ppt, move position center
+bindsym $mod+g floating toggle, resize set 70 ppt 70 ppt, move right 30px, move down 30px
+
 
 for_window [class="Alacritty" floating] resize set 50 ppt 50 ppt, move position center
+for_window [class="feh"] floating enable, border pixel 2, move position center
 
 
 # change focus between tiling / floating windows
@@ -227,6 +230,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 
 # tomar capturas de pantalla
 bindsym $mod+Shift+s exec --no-startup-id flameshot gui
+bindsym Print exec --no-startup-id flameshot screen -c -p ~/Pictures
 
 # Ejecutar wlogout
 bindsym $mod+Shift+z exec --no-startup-id ~/.config/rofi/powermenu.sh

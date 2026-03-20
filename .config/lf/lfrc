@@ -2,13 +2,14 @@ set previewer ~/.config/lf/preview
 set cleaner ~/.config/lf/cleaner
 
 set preview true
+
 # Basic Settings
 set hidden true
 set ignorecase true
 set icons true
-#set dircolors false
 set sixel true
 set rulerfmt "%d  |%a  |%p  |\033[7;31m %m \033[0m  |\033[7;33m %c \033[0m  |\033[7;35m %s \033[0m  |\033[7;34m %f \033[0m  |%i/%t"
+
 
 # Custom Functions
 cmd mkdir ${{
@@ -40,22 +41,6 @@ cmd unarchive ${{
   esac
 }}
 
-# Trash bindings
-#cmd trash ${{
-#  files=$(printf "$fx" | tr '\n' ';')
-#  while [ "$files" ]; do
-#    file=${files%%;*}
-#
-#    trashy put "$(basename "$file")"
-#    if [ "$files" = "$file" ]; then
-#      files=''
-#    else
-#      files="${files#*;}"
-#    fi
-#  done
-#}}
-
-# Trash bindings
 cmd trash ${{
   for file in $fx; do
     trash-put "$file"
@@ -63,10 +48,14 @@ cmd trash ${{
 }}
 #
 cmd open &{{
-	case $(file --mime-type -Lb $f) in
-		text/*) lf -remote "send $id \$nvim \$fx";;
-		*) xdg-open "$f"
-	esac
+    case $(file --mime-type -Lb "$f") in
+        text/*) 
+            lf -remote "send $id \$nvim \$fx" ;;
+        image/*) 
+            feh --geometry 1000x700 --auto-zoom --scale-down --image-bg black --start-at "$f" . & ;;
+        *) 
+            xdg-open "$f" ;;
+    esac
 }}
 
 cmd on-select &{{
