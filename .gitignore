@@ -1,0 +1,5 @@
+.config/libreoffice/**/backup/
+.config/libreoffice/**/*.bak
+.config/libreoffice/**/.lock*
+.config/libreoffice/**/pack/
+.config/libreoffice/**/*.pack
