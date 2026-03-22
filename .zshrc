@@ -274,3 +274,4 @@ ex=:\
 *.pdf=:\
 *.nix=:\
 "
+export PATH="$HOME/.local/bin:$PATH"
