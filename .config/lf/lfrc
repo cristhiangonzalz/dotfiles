@@ -53,6 +53,8 @@ cmd open &{{
             lf -remote "send $id \$nvim \$fx" ;;
         image/*) 
             feh --geometry 1000x700 --auto-zoom --scale-down --image-bg black --start-at "$f" . & ;;
+	application/pdf)
+	zathura "$f" & ;;
         *) 
             xdg-open "$f" ;;
     esac
