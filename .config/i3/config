@@ -108,9 +108,10 @@ bindsym $mod+e layout toggle split
 bindsym $mod+g floating toggle, resize set 70 ppt 70 ppt, move right 30px, move down 30px
 
 
-for_window [class="Alacritty" floating] resize set 50 ppt 50 ppt, move position center
+for_window [class="Alacritty"] floating enable, resize set 50 ppt 50 ppt, move position center
 for_window [class="feh"] floating enable, border pixel 2, move position center
 for_window [class="Zathura"] floating enable, resize set 60 ppt 90 ppt, move position center
+for_window [class="pavucontrol"] floating enable, resize set 1210 689, move position center
 
 
 
@@ -209,9 +210,6 @@ for_window [class=".*"] title_format ""
 for_window [class=".*"] border normal
 for_window [class=".*"] border pixel 1
 
-# Ejemplo: Solo para la terminal Alacritty
-#for_window [class="Brave-browser"] floating enable, resize set 70 ppt 90 ppt, move position center
-
 
 gaps outer 0
 gaps inner 4
@@ -269,7 +267,11 @@ exec --no-startup-id xset dpms 3600 3600 3600
 # Asegurar que DPMS esté activado para que respete los tiempos anteriores
 exec --no-startup-id xset +dpms
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
 
 bar {
     # Muestra la barra en todos los monitores
