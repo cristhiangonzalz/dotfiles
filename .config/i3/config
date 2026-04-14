@@ -104,19 +104,22 @@ bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 #bindsym $mod+Shift+space floating toggle
-#bindsym $mod+g floating toggle
-bindsym $mod+g floating toggle, resize set 70 ppt 70 ppt, move right 30px, move down 30px
+bindsym $mod+g floating toggle
 
 
 for_window [class="Alacritty"] floating enable, resize set 50 ppt 50 ppt, move position center
 for_window [class="feh"] floating enable, border pixel 2, move position center
 for_window [class="Zathura"] floating enable, resize set 60 ppt 90 ppt, move position center
 for_window [class="pavucontrol"] floating enable, resize set 1210 689, move position center
+for_window [class="Thunar"] floating enable, resize set 1100 800, move position center
+for_window [class="iriunwebcam"] floating enable, resize set 900 680, move position center
 
+bindsym $mod+p exec pavucontrol
 
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
+#bindsym Mod1+Tab focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
