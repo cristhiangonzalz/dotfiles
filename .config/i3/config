@@ -115,7 +115,7 @@ for_window [class="Thunar"] floating enable, resize set 1100 800, move position 
 for_window [class="iriunwebcam"] floating enable, resize set 900 680, move position center
 
 bindsym $mod+p exec pavucontrol
-
+bindsym $mod+t exec Thunar
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
